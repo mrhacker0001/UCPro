@@ -6,7 +6,6 @@ import tiktok from "./assets/tiktok.jpeg";
 import dreamleaguesoccer from "./assets/Dream League Soccer.jpeg";
 import pubg from "./assets/PUBG Icon.jpeg";
 import freefire from "./assets/Freefire.jpeg";
-import callofduty from "./assets/callofduty.jpeg";
 import { NavLink } from 'react-router-dom';
 
 function Apps() {
@@ -19,7 +18,6 @@ function Apps() {
         { name: "Instagram", img: instagram, link: "Instagram" },
         { name: "Dream League Soccer", img: dreamleaguesoccer, link: "DreamLeagueSoccer" },
         { name: "TikTok", img: tiktok, link: "TikTok" },
-        { name: "CALL OF DUTY", img: callofduty, link: "CallOfDuty" },
     ]
 
     return (

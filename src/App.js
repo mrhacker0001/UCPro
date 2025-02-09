@@ -10,7 +10,6 @@ import Pubg from "./Apps/Pubg";
 import Instagram from "./Apps/Instagram";
 import Telegram from "./Apps/Telegram";
 import TikTok from "./Apps/TikTok";
-import CallOfDuty from "./Apps/CallOfDuty";
 import DreamLeagueSoccer from "./Apps/DreamLeagueSoccer";
 
 function App() {
@@ -27,7 +26,6 @@ function App() {
         <Route path="/Apps/Instagram" element={<Instagram />} />
         <Route path="/Apps/Telegram" element={<Telegram />} />
         <Route path="/Apps/TikTok" element={<TikTok />} />
-        <Route path="/Apps/CallOfDuty" element={<CallOfDuty />} />
         <Route path="/Apps/DreamLeagueSoccer" element={<DreamLeagueSoccer />} />
       </Routes>
       <Footer />

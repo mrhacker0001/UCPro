@@ -169,7 +169,7 @@
     align-items: center;
     padding: 20dvh 0;
     gap: 5dvh;
-}   
+}
 
 .Telegram h1 {
     font-size: 25px;
@@ -191,6 +191,7 @@
     background: #ffffff;
     display: block;
 }
+
 /* Telegram end */
 
 
@@ -204,7 +205,7 @@
     align-items: center;
     padding: 20dvh 0;
     gap: 5dvh;
-}       
+}
 
 .Instagram h1 {
     font-size: 25px;
@@ -228,6 +229,113 @@
 }
 
 /* Instagram end */
+
+
+/* Dream league soccer start */
+
+.DreamLeagueSoccer {
+    width: 100dvw;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20dvh 0;
+    gap: 5dvh;
+}
+
+.DreamLeagueSoccer h1 {
+    font-size: 25px;
+    color: #ffffff;
+    font-family: 'Courier New', Courier, monospace;
+    text-align: center;
+    text-shadow: 2px 2px 10px rgb(255, 255, 255);
+    display: flex;
+    align-items: center;
+    gap: 2vw;
+    position: relative;
+}
+
+.DreamLeagueSoccer h1::after,
+.DreamLeagueSoccer h1::before {
+    content: "";
+    width: 40vw;
+    height: 1px;
+    background: #ffffff;
+    display: block;
+}
+
+/* Dream league soccer end */
+
+
+/* Tiktok start */
+
+.TikTok {
+    width: 100dvw;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20dvh 0;
+    gap: 5dvh;
+}
+
+.TikTok h1 {
+    font-size: 25px;
+    color: #ffffff;
+    font-family: 'Courier New', Courier, monospace;
+    text-align: center;
+    text-shadow: 2px 2px 10px rgb(255, 255, 255);
+    display: flex;
+    align-items: center;
+    gap: 2vw;
+    position: relative;
+}
+
+.TikTok h1::after,
+.TikTok h1::before {
+    content: "";
+    width: 40vw;
+    height: 1px;
+    background: #ffffff;
+    display: block;
+}
+
+/* Tiktok end */
+
+/* Call of Duty start */
+
+.CallOfDuty {
+    width: 100dvw;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20dvh 0;
+    gap: 5dvh;
+}
+
+.CallOfDuty h1 {
+    font-size: 25px;
+    color: #ffffff;
+    font-family: 'Courier New', Courier, monospace;
+    text-align: center;
+    text-shadow: 2px 2px 10px rgb(255, 255, 255);
+    display: flex;
+    align-items: center;
+    gap: 2vw;
+    position: relative;
+}
+
+.CallOfDuty h1::after,
+.CallOfDuty h1::before {
+    content: "";
+    width: 40vw;
+    height: 1px;
+    background: #ffffff;
+    display: block;
+}
+
+/* Call of Duty end */
 
 
 .games-carts {
@@ -269,7 +377,7 @@
     text-shadow: 2px 2px 10px rgb(255, 255, 255);
 }
 
-.game-cart span{
+.game-cart span {
     font-size: 20px;
     color: #ffffff;
     font-family: 'Courier New', Courier, monospace;

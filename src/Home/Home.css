@@ -95,7 +95,7 @@
     display: flex;
     align-items: center;
     gap: 4vw;
-    animation: slide 50s linear infinite;
+    animation: slide 20s linear infinite;
 }
 
 /* 🔹 Item dizayni */

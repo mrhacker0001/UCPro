@@ -6,17 +6,19 @@ import tiktok from "./assets/tiktok.jpeg";
 import dreamleaguesoccer from "./assets/Dream League Soccer.jpeg";
 import pubg from "./assets/PUBG Icon.jpeg";
 import freefire from "./assets/Freefire.jpeg";
-import callofduty from "./assets/callofduty.jpeg";
+import { useNavigate } from "react-router-dom";
 
 function Secondpage() {
+
+    const navigate = useNavigate();
+
     const data = [
-        { id: 1, name: "Free Fire", img: freefire },
-        { id: 2, name: "PUBG", img: pubg },
-        { id: 3, name: "Telegram", img: telegram },
-        { id: 4, name: "Instagram", img: instagram },
-        { id: 5, name: "Dream League Soccer", img: dreamleaguesoccer },
-        { id: 6, name: "TikTok", img: tiktok },
-        { id: 7, name: "CALL OF DUTY", img: callofduty }
+        { id: 1, name: "Free Fire", img: freefire, link: "/Apps/FreeFire" },
+        { id: 2, name: "PUBG", img: pubg, link: "/Apps/Pubg" },
+        { id: 3, name: "Telegram", img: telegram, link: "/Apps/Telegram" },
+        { id: 4, name: "Instagram", img: instagram, link: "/Apps/Instagram" },
+        { id: 5, name: "Dream League Soccer", img: dreamleaguesoccer, link: "/Apps/DreamLeagueSoccer" },
+        { id: 6, name: "TikTok", img: tiktok, link: "/Apps/TikTok" },
     ];
 
     return (
@@ -33,7 +35,7 @@ function Secondpage() {
                     }}
                 >
                     {data.map((item) => (
-                        <div className="item" key={item.id}>
+                        <div className="item" key={item.id} onClick={() => navigate(item.link)}>
                             <img src={item.img} alt={item.name} />
                             <p>{item.name}</p>
                         </div>
