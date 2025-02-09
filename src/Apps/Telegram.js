@@ -1,10 +1,17 @@
-import React from 'react'
+import React, { useState } from 'react'
 import eye from "./assets/eye.png"
 import team from "./assets/team.png"
 import emoji from "./assets/emoji.png"
 import user from "./assets/user (2).png"
+import axios from 'axios';
+
 
 function Telegram() {
+  const [selectedItem, setSelectedItem] = useState(null);
+  const [paymentProof, setPaymentProof] = useState(null);
+  const [showForm, setShowForm] = useState(false);
+  const [accountLink, setAccountLink] = useState("");
+  const [count, setCount] = useState(1000);
 
   const data = [
     { name: "Arzon ko'rish", img: eye, price: 100, count: 1000 },
@@ -48,6 +55,58 @@ function Telegram() {
     { name: "Premium obunachi (kafolat 90 kun)", img: user, price: 425000, count: 1000 },
     { name: "Premium obunachi (kafolat 90 kun)", img: user, price: 425000, count: 1000 },
   ]
+
+  const handleOrderClick = (item) => {
+    setSelectedItem(item);
+    setShowForm(true);
+  };
+
+  const handleCopy = (text) => {
+    navigator.clipboard.writeText(text);
+    alert('Nusxalandi: ' + text);
+  };
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    if (!selectedItem || !paymentProof || !accountLink || !count) {
+      alert("Barcha maydonlarni to‘ldiring va chekni yuklang!");
+      return;
+    }
+
+    const formData = new FormData();
+    formData.append('chat_id', '@ucpro_books');
+    formData.append(
+      'caption',
+        `📌 Buyurtma ma’lumotlari:\n\n` +
+      `🔗 Akkaunt/Post: ${accountLink}\n` +
+      `📢 Xizmat turi: ${selectedItem.name}\n` +
+      `📊 Soni: ${count} ta\n` +
+      `💰 Narxi: ${selectedItem.price} so'm\n`+
+      `Telegram`
+
+
+    );
+    formData.append('photo', paymentProof);
+
+    try {
+      await axios.post(
+        `https://api.telegram.org/bot7921836882:AAGgfwYebM5JbRLvv0qsqs4cAgmOz6l_YnE/sendPhoto`,
+        formData,
+        { headers: { 'Content-Type': 'multipart/form-data' } }
+      );
+      alert("Buyurtma yuborildi!");
+      setShowForm(false);
+      setAccountLink("");
+      setCount("");
+      setPaymentProof(null);
+    } catch (error) {
+      console.error("Xatolik yuz berdi:", error);
+      alert("Ma'lumotlarni yuborishda xatolik yuz berdi");
+    }
+  };
+
+
+
   return (
     <div className='Telegram'>
       <h1>Telegram ko'rish</h1>
@@ -58,7 +117,8 @@ function Telegram() {
             <p>{item.name}</p>
             <span>narxi: {item.price} so'm</span>
             <span>soni: {item.count} ta</span>
-            <button><span>buyurtma berish</span></button>
+            <button onClick={() => handleOrderClick(item)}>buyurtma berish</button>
+
           </div>
         ))}
       </div>
@@ -72,7 +132,8 @@ function Telegram() {
             <p>{item.name}</p>
             <span>narxi: {item.price} so'm</span>
             <span>soni: {item.count} ta</span>
-            <button><span>buyurtma berish</span></button>
+            <button onClick={() => handleOrderClick(item)}>buyurtma berish</button>
+
           </div>
         ))}
       </div>
@@ -86,7 +147,8 @@ function Telegram() {
             <p>{item.name}</p>
             <span>narxi: {item.price} so'm</span>
             <span>soni: {item.count} ta</span>
-            <button><span>buyurtma berish</span></button>
+            <button onClick={() => handleOrderClick(item)}>buyurtma berish</button>
+
           </div>
         ))}
       </div>
@@ -100,10 +162,52 @@ function Telegram() {
             <p>{item.name}</p>
             <span>narxi: {item.price} so'm</span>
             <span>soni: {item.count} ta</span>
-            <button><span>buyurtma berish</span></button>
+            <button onClick={() => handleOrderClick(item)}>buyurtma berish</button>
+
           </div>
         ))}
       </div>
+
+      {showForm && selectedItem && (
+        <div className="form-container">
+          <form className="form" onSubmit={handleSubmit}>
+            <h2>Buyurtma berish</h2>
+            <p>Xizmat turi: {selectedItem.name}</p>
+            <p>Narxi: {Math.round((selectedItem.price / selectedItem.count) * count)} so'm</p>
+            <input
+              type="number"
+              placeholder="Miqdor"
+              value={count}
+              onChange={(e) => setCount(e.target.value)}
+              required
+              style={{ width: "70%", borderBottom: "1px solid #ffffff" }}
+            />
+
+            <input
+              type="text"
+              placeholder="Akkaunt yoki post havolasini kiriting"
+              value={accountLink}
+              onChange={(e) => setAccountLink(e.target.value)}
+              required
+              style={{ width: "70%", borderBottom: "1px solid #ffffff" }}
+            />
+
+            <p onClick={() => handleCopy("9860080186485357")} className="copy-text">
+              To'lov uchun karta (Uzcard): 9860 0801 8648 5357
+            </p>
+            <p onClick={() => handleCopy("5189690066340779")} className="copy-text">
+              To'lov uchun karta (Mastercard): 5189 6900 6634 0779
+            </p>
+
+            <span>
+              To'lov chekini yuklang !!!
+              <input type="file" onChange={(e) => setPaymentProof(e.target.files[0])} required />
+            </span>
+
+            <button type="submit">Tasdiqlash</button>
+          </form>
+        </div>
+      )}
 
     </div >
   )

@@ -7,6 +7,7 @@ function FreeFire() {
     const [selectedItem, setSelectedItem] = useState(null);
     const [paymentProof, setPaymentProof] = useState(null);
     const [showForm, setShowForm] = useState(false);
+    const [id, setId] = useState("");
 
     const data = [
         { img: almaz, name: "almaz", price: 13000, count: 105 },
@@ -38,7 +39,7 @@ function FreeFire() {
 
         const formData = new FormData();
         formData.append('chat_id', '@ucpro_books');
-        formData.append('caption', `Buyurtma ma’lumotlari:\nMahsulot: ${selectedItem.name}\nNarxi: ${selectedItem.price} so'm\nSoni: ${selectedItem.count} ta`);
+        formData.append('caption', `Buyurtma ma’lumotlari:\nMahsulot: ${selectedItem.name}\nNarxi: ${selectedItem.price} so'm\nSoni: ${selectedItem.count} ta\nID: ${id}\nFREE FIRE`);
         formData.append('photo', paymentProof);
 
         try {
@@ -47,6 +48,7 @@ function FreeFire() {
             });
             alert('Buyurtma yuborildi!');
             setShowForm(false);
+            setId("");
         } catch (error) {
             console.error('Xatolik yuz berdi:', error);
             alert("Ma'lumotlarni yuborishda xatolik yuz berdi");
@@ -81,6 +83,14 @@ function FreeFire() {
                         <p onClick={() => handleCopy('5189690066340779')} className="copy-text">
                             To'lov uchun karta (Mastercard): 5189 6900 6634 0779
                         </p>
+                        <input
+                            type="number"
+                            placeholder="ID kiriting"
+                            value={id}
+                            onChange={(e) => setId(e.target.value)}
+                            required
+                            style={{ width: "70%", borderBottom: "1px solid #ffffff" }}
+                        />
                         <span>To'lov chekini yuklang !!! <input type='file' onChange={(e) => setPaymentProof(e.target.files[0])} required /></span>
                         <button type='submit'>Tasdiqlash</button>
                     </form>

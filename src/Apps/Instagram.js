@@ -58,7 +58,9 @@ function Instagram() {
       `🔗 Akkaunt/Post: ${accountLink}\n` +
       `📢 Xizmat turi: ${selectedItem.name}\n` +
       `📊 Soni: ${count} ta\n` +
-      `💰 Narxi: ${selectedItem.price} so'm\n`
+      `💰 Narxi: ${selectedItem.price} so'm\n`+
+      `Instagram`
+
     );
     formData.append('photo', paymentProof);
 

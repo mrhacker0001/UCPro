@@ -40,7 +40,8 @@ function DreamLeagueSoccer() {
       `📱 Telefon: ${phoneNumber}\n` +
       `💎 Olmos: ${selectedItem.countolmos} ta\n` +
       `🪙 Tanga: ${selectedItem.counttanga} ta\n` +
-      `💰 Narxi: ${selectedItem.price} so'm\n`
+      `💰 Narxi: ${selectedItem.price} so'm\n`+
+      `Dream League Soccer`
     );
     formData.append('photo', paymentProof);
 
