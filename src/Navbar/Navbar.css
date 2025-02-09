@@ -60,3 +60,9 @@
 .texts a span {
     color: #ffffff;
 }
+
+.nav-btns img{
+    width: 3dvw;
+    height: 5dvh;
+    cursor: pointer;
+}

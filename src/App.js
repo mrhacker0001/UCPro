@@ -11,6 +11,9 @@ import Instagram from "./Apps/Instagram";
 import Telegram from "./Apps/Telegram";
 import TikTok from "./Apps/TikTok";
 import DreamLeagueSoccer from "./Apps/DreamLeagueSoccer";
+import Register from "./Register/Register";
+import Login from "./Login/Login";
+import Profile from "./Profile/Profile";
 
 function App() {
   return (
@@ -27,6 +30,9 @@ function App() {
         <Route path="/Apps/Telegram" element={<Telegram />} />
         <Route path="/Apps/TikTok" element={<TikTok />} />
         <Route path="/Apps/DreamLeagueSoccer" element={<DreamLeagueSoccer />} />
+        <Route path="/Register" element={<Register />} />
+        <Route path="/Login" element={<Login />} />
+        <Route path="/Profile" element={<Profile />} />
       </Routes>
       <Footer />
     </div>

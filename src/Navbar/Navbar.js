@@ -1,13 +1,26 @@
-import React from 'react'
-import './Navbar.css'
-import logo from './assets/UCPro.png'
-import { NavLink } from 'react-router-dom';
-
+import React, { useState, useEffect } from 'react';
+import './Navbar.css';
+import logo from './assets/UCPro.png';
+import profileIcon from './assets/profile-user (1).png'; // Profil ikonkasi uchun rasm
+import { NavLink, useNavigate } from 'react-router-dom';
 
 function Navbar() {
+  const navigate = useNavigate();
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
+
+  // Foydalanuvchi tizimga kirganligini tekshirish
+  useEffect(() => {
+    const savedEmail = localStorage.getItem('email');
+    const savedPhone = localStorage.getItem('phone');
+    if (savedEmail && savedPhone) {
+      setIsLoggedIn(true);
+    }
+  }, []);
+
   return (
     <div className='Navbar'>
-      <img src={logo} alt="" />
+      <img src={logo} alt="Logo" />
+
       <div className="texts">
         <NavLink to='/'><span>Bosh sahifa</span></NavLink>
         <NavLink to='/News'><span>Yangiliklar</span></NavLink>
@@ -16,11 +29,22 @@ function Navbar() {
       </div>
 
       <div className="nav-btns">
-        <button>Ro'yxatdan o'tish</button>
-        <button>Kirish</button>
+        {isLoggedIn ? (
+          <img
+            src={profileIcon}
+            alt="Profil"
+            className="profile-icon"
+            onClick={() => navigate('/Profile')}
+          />
+        ) : (
+          <>
+            <button onClick={() => navigate('/Register')}>Ro'yxatdan o'tish</button>
+            <button onClick={() => navigate('/Login')}>Kirish</button>
+          </>
+        )}
       </div>
     </div>
-  )
+  );
 }
 
-export default Navbar
+export default Navbar;
