@@ -1,0 +1,134 @@
+.Home {
+    width: 100dvw;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 20dvh;
+}
+
+/* Firstpage */
+
+.Firstpage {
+    width: 100dvw;
+    height: 60dvh;
+    display: flex;
+    align-items: center;
+    gap: 10dvw;
+    margin-top: 25dvh;
+    padding: 0 5dvw;
+}
+
+.Firstpage img {
+    width: 70dvw;
+    height: 50dvh;
+    border-radius: 15px;
+}
+
+.Firstpage p {
+    font-size: 28px;
+    color: #ffffff;
+    font-family: 'Courier New', Courier, monospace;
+    line-height: 30px;
+    text-align: center;
+}
+
+
+
+
+
+
+
+/* Secondpage */
+
+.Secondpage {
+    width: 100vw;
+    height: 60vh;
+    display: flex;
+    flex-direction: column;
+    gap: 5vh;
+    align-items: center;
+    justify-content: center;
+}
+
+.Secondpage h1 {
+    font-size: 32px;
+    color: #ffffff;
+    font-family: 'Courier New', Courier, monospace;
+    text-align: center;
+    text-shadow: 2px 2px 10px rgb(255, 255, 255);
+    display: flex;
+    align-items: center;
+    gap: 2vw;
+    position: relative;
+}
+
+.Secondpage h1::after,
+.Secondpage h1::before {
+    content: "";
+    width: 40vw;
+    height: 1px;
+    background: #ffffff;
+    display: block;
+}
+
+/* 🔹 Slayder uchun animatsiya */
+@keyframes slide {
+    from {
+        transform: translateX(100%);
+    }
+
+    to {
+        transform: translateX(-100%);
+    }
+}
+
+.animation-container {
+    width: 100vw;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+}
+
+.animation {
+    width: 100dvw;
+    height: 40dvh;
+    display: flex;
+    align-items: center;
+    gap: 4vw;
+    animation: slide 50s linear infinite;
+}
+
+/* 🔹 Item dizayni */
+.item {
+    width: 13vw;
+    height: 23vh;
+    border: 1px solid #000000;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5vh;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 2px 2px 10px rgb(255, 255, 255);
+    border-radius: 10px;
+    background: none;
+    cursor: pointer;
+    transition: all 0.2s ease-in-out;
+}
+
+.item:hover {
+    transform: scale(1.1);
+}
+
+.item img {
+    width: 9vw;
+    height: 15vh;
+    border-radius: 10px;
+}
+
+.item p{
+    font-size: 18px;
+    color: #ffffff;
+    font-family: 'Courier New', Courier, monospace;
+    text-align: center;
+    text-shadow: 2px 2px 10px rgb(255, 255, 255);
+}

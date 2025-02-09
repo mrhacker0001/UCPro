@@ -1,0 +1,14 @@
+.News {
+    width: 100dvw;
+    height: 50dvh;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+}
+
+.News h1 {
+    font-size: 35px;
+    color: #ffffff;
+    font-family: 'Courier New', Courier, monospace;
+}
