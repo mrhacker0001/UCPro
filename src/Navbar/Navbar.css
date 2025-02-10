@@ -11,13 +11,17 @@
     z-index: 1;
 }
 
+.navbar-media {
+    display: none;
+}
+
 .Navbar img {
     width: 10dvw;
     height: 9dvh;
     border-radius: 10px;
 }
 
-.Navbar .texts {
+.texts {
     width: 25dvw;
     display: flex;
     justify-content: space-between;
@@ -61,8 +65,364 @@
     color: #ffffff;
 }
 
-.nav-btns img{
+.nav-btns img {
     width: 3dvw;
     height: 5dvh;
     cursor: pointer;
 }
+
+
+@media (max-width:1440px) {
+    .texts {
+        width: 30dvw;
+        height: auto;
+        display: flex;
+        align-items: center;
+        gap: 2dvh;
+    }
+
+    .nav-btns img {
+        width: 4dvw;
+        height: 5dvh;
+        cursor: pointer;
+    }
+}
+
+@media (max-width:1270px) {
+    .texts {
+        width: 35dvw;
+        height: auto;
+        display: flex;
+        align-items: center;
+        gap: 2dvh;
+    }
+
+    .nav-btns img {
+        width: 4dvw;
+        height: 5dvh;
+        cursor: pointer;
+    }
+}
+
+
+@media (max-width:1120px) {
+
+    .Navbar img {
+        width: 8dvw;
+        height: 7dvh;
+    }
+
+    .texts {
+        width: 40dvw;
+        height: auto;
+        display: flex;
+        align-items: center;
+        gap: 2dvh;
+    }
+
+    .texts {
+        font-size: 15px;
+    }
+
+    .nav-btns img {
+        width: 3.5dvw;
+        height: 4dvh;
+        cursor: pointer;
+    }
+}
+
+@media (max-width:1120px) {
+    .Navbar img {
+        width: 9dvw;
+        height: 7dvh;
+    }
+
+    .nav-btns img {
+        width: 4dvw;
+        height: 4dvh;
+        cursor: pointer;
+    }
+}
+
+@media (max-width:950px) {
+
+    .Navbar img {
+        width: 10dvw;
+        height: 6.5dvh;
+    }
+
+    .nav-btns img {
+        width: 4dvw;
+        height: 4dvh;
+        cursor: pointer;
+    }
+
+    .texts {
+        font-size: 14px;
+    }
+}
+
+
+
+
+
+
+
+/* Navbar media start */
+
+@media (max-width:850px) {
+    .Navbar {
+        display: none;
+    }
+
+    .navbar-media {
+        width: 100dvw;
+        height: 12dvh;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 0 3dvw;
+        border-bottom: 1px solid #ffffff;
+        box-shadow: 0 2px 10px rgb(255, 255, 255);
+        position: fixed;
+        z-index: 1;
+    }
+
+    .navbar-media img {
+        width: 17dvw;
+        height: 9dvh;
+        border-radius: 10px;
+    }
+
+    .mobile-menu {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        backdrop-filter: blur(30px);
+        gap: 40px;
+        padding-top: 50px;
+        width: 50dvw;
+        height: 100%;
+        position: fixed;
+        left: -1dvw;
+        top: 0;
+        bottom: 0;
+        z-index: 1;
+        transform: translateX(-50dvw);
+        transition: transform 0.5s ease-in-out;
+        box-shadow: 0 2px 10px rgb(255, 255, 255);
+    }
+
+    .mobile-menu.open {
+        transform: translateX(0);
+    }
+
+    .mobile-menu a {
+        color: #ffffff;
+        text-decoration: none;
+        font-size: 24px;
+        font-family: 'Courier New', Courier, monospace;
+    }
+
+    .mobile-menu a span {
+        width: 20dvw;
+        color: #ffffff;
+        border-bottom: 2px solid #ffffff;
+        font-size: 20px;
+        font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    }
+
+    .menu-icon {
+        border: none;
+        background: none;
+        color: black;
+    }
+
+    .icon {
+        width: 3dvw;
+        height: 5dvh;
+        cursor: pointer;
+    }
+
+    .nav-btns-media {
+        width: auto;
+        display: flex;
+        align-items: center;
+        gap: 5dvw;
+    }
+
+    .nav-btns-media img {
+        width: 6dvw;
+        height: 5dvh;
+    }
+}
+
+
+@media (max-width:750px) {
+    .navbar-media {
+        width: 100dvw;
+    }
+}
+
+@media (max-width:650px) {
+    .navbar-media {
+        width: 100dvw;
+    }
+}
+
+@media (max-width:690px) {
+
+    .navbar-media img {
+        width: 19dvw;
+        height: 9dvh;
+    }
+
+    .nav-btns-media img {
+        width: 7dvw;
+        height: 5dvh;
+    }
+
+    .contact-apps-media {
+        display: block;
+        display: flex;
+        align-items: center;
+        gap: 1dvw;
+    }
+
+    .contact-apps-media button {
+        width: 10dvw;
+        height: 10dvh;
+        background: none;
+        border: none;
+    }
+
+    .contact-apps-media button img {
+        width: 6dvw;
+        height: 4dvh;
+    }
+
+
+}
+
+@media (max-width:600px) {
+
+    .navbar-media img {
+        width: 22dvw;
+        height: 9dvh;
+    }
+
+    .nav-btns-media img {
+        width: 8dvw;
+        height: 5dvh;
+    }
+
+    .icon {
+        width: 4dvw;
+    }
+
+    .mobile-menu {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        backdrop-filter: blur(30px);
+        gap: 40px;
+        padding-top: 50px;
+        width: 60dvw;
+        height: 100%;
+        position: fixed;
+        left: -1dvw;
+        top: 0;
+        bottom: 0;
+        z-index: 1;
+        transform: translateX(-60dvw);
+        transition: transform 0.5s ease-in-out;
+        box-shadow: 0 2px 10px rgb(255, 255, 255);
+    }
+}
+
+@media (max-width:570px) {
+
+    .navbar-media img {
+        width: 24dvw;
+        height: 7dvh;
+    }
+
+    .nav-btns-media img {
+        width: 7dvw;
+        height: 4dvh;
+    }
+
+    .contact-apps-media {
+        gap: 3dvw;
+    }
+
+    .contact-apps-media button img {
+        width: 6dvw;
+        height: 4dvh;
+    }
+}
+
+
+@media (max-width:470px) {
+
+    .navbar-media img {
+        width: 28dvw;
+        height: 7dvh;
+    }
+
+    .nav-btns-media img {
+        width: 9dvw;
+        height: 4dvh;
+    }
+
+    .contact-apps-media {
+        gap: 5dvw;
+    }
+
+    .contact-apps-media button img {
+        width: 8dvw;
+        height: 5dvh;
+    }
+
+
+    .icon {
+        width: 5dvw;
+    }
+
+    .mobile-menu {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        backdrop-filter: blur(30px);
+        gap: 40px;
+        padding-top: 50px;
+        width: 70dvw;
+        height: 100%;
+        position: fixed;
+        left: -1dvw;
+        top: 0;
+        bottom: 0;
+        z-index: 1;
+        transform: translateX(-70dvw);
+        transition: transform 0.5s ease-in-out;
+        box-shadow: 0 2px 10px rgb(255, 255, 255);
+    }
+}
+
+@media (max-width:420px) {
+
+
+    .contact-apps-media {
+        gap: 5dvw;
+    }
+
+    .contact-apps-media button img {
+        width: 7dvw;
+        height: 4dvh;
+    }
+}
+
+/* Navbar media end */

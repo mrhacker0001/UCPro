@@ -12,3 +12,21 @@
     color: #ffffff;
     font-family: 'Courier New', Courier, monospace;
 }
+
+@media (max-width:850px) {
+    .News h1 {
+        font-size: 25px;
+    }
+}
+
+@media (max-width:650px) {
+    .News h1 {
+        font-size: 20px;
+    }
+}
+
+@media (max-width:450px) {
+    .News h1 {
+        font-size: 16px;
+    }
+}

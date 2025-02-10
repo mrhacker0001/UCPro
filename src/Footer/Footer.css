@@ -101,3 +101,134 @@
     border-radius: 10px;
     background: none;
 }
+
+
+@media (max-width: 1050px) {
+    .games h1 {
+        font-size: 22px
+    }
+
+    .games b {
+        font-size: 17px;
+    }
+
+    .apps h1 {
+        font-size: 22px
+    }
+
+    .apps b {
+        font-size: 17px;
+    }
+
+    .contact-apps button img {
+        width: 5dvw;
+        height: 5dvh;
+    }
+}
+
+@media (max-width: 880px) {
+
+    .Footer {
+        width: 100dvw;
+        height: 30dvh;
+    }
+
+    .games h1 {
+        font-size: 18px
+    }
+
+    .games b {
+        font-size: 14px;
+    }
+
+    .apps h1 {
+        font-size: 18px
+    }
+
+    .apps b {
+        font-size: 14px;
+    }
+
+    .contact-apps button img {
+        width: 4dvw;
+        height: 4dvh;
+    }
+}
+
+@media (max-width: 650px) {
+
+    .Footer {
+        width: 100dvw;
+        height: 20dvh;
+    }
+
+    .games h1 {
+        font-size: 16px
+    }
+
+    .games b {
+        font-size: 12px;
+    }
+
+    .apps h1 {
+        font-size: 16px
+    }
+
+    .apps b {
+        font-size: 12px;
+    }
+
+    .games {
+        gap: 1dvh;
+    }
+
+    .apps {
+        gap: 1dvh;
+    }
+
+
+
+    .contact-apps {
+        display: none;
+    }
+}
+
+@media (max-width: 450px) {
+
+    .Footer {
+        width: 100dvw;
+        height: 15dvh;
+    }
+
+    .games h1 {
+        font-size: 14px
+    }
+
+    .games b {
+        font-size: 10px;
+    }
+
+    .apps h1 {
+        font-size: 14px
+    }
+
+    .apps b {
+        font-size: 10px;
+    }
+
+    .games {
+        gap: 0.5dvh;
+    }
+
+    .apps {
+        gap: 0.5dvh;
+    }
+
+.Footer img{
+    width: 25dvw;
+}
+
+    .contact-apps {
+        display: none;
+    }
+}

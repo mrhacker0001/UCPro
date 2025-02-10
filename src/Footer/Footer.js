@@ -4,26 +4,29 @@ import logo from "../Navbar/assets/UCPro.png"
 import telegram from "./assets/telegram (3).png"
 import instagram from "./assets/instagram (3).png"
 import contact from "./assets/contact-mail (1).png"
+import { useNavigate } from 'react-router-dom'
 
 function Footer() {
+    const navigate = useNavigate();
+
+
     return (
         <div className='Footer'>
             <img src={logo} alt="" />
 
             <div className="games">
                 <h1>Onlayn O'yinlar</h1>
-                <b>PUBG</b>
-                <b>Free Fire</b>
-                <b>Call of Duty</b>
-                <b>Dream League Soccer</b>
+                <b onClick={() => navigate("/Apps/Pubg")}>PUBG</b>
+                <b onClick={() => navigate("/Apps/FreeFire")}>Free Fire</b>
+                <b onClick={() => navigate("/Apps/DreamLeagueSoccer")}>Dream League Soccer</b>
             </div>
 
             <div className="apps">
                 <h1>Ilovalar</h1>
-                <b>Instagram</b>
-                <b>Telegram</b>
-                <b>Tik Tok</b>
-                <b>You Tube</b>
+                <b onClick={() => navigate("/Apps/Instagram")}>Instagram</b>
+                <b onClick={() => navigate("/Apps/Telegram")}>Telegram</b>
+                <b onClick={() => navigate("/Apps/TikTok")}>Tik Tok</b>
+                <b onClick={() => navigate("/Apps/YouTube")}>You Tube</b>
             </div>
 
             <div className="contact-apps">

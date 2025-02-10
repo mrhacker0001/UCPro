@@ -7,6 +7,7 @@ import dreamleaguesoccer from "./assets/Dream League Soccer.jpeg";
 import pubg from "./assets/PUBG Icon.jpeg";
 import freefire from "./assets/Freefire.jpeg";
 import { useNavigate } from "react-router-dom";
+import "./Home.css";
 
 function Secondpage() {
 

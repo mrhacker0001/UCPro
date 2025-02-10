@@ -34,8 +34,91 @@
 
 
 
+@media (max-width:1300px) {
+    .Firstpage p {
+        font-size: 24px;
+        line-height: 27px;
+    }
+}
+
+@media (max-width:1180px) {
+    .Firstpage p {
+        font-size: 20px;
+        line-height: 27px;
+    }
+
+    .Firstpage img {
+        width: 60dvw;
+        height: 40dvh;
+        border-radius: 15px;
+    }
+}
+
+@media (max-width:1000px) {
+    .Firstpage p {
+        font-size: 18px;
+        line-height: 25px;
+    }
+
+    .Firstpage img {
+        width: 50dvw;
+        height: 35dvh;
+        border-radius: 15px;
+    }
+}
+
+@media (max-width:880px) {
+
+    .Firstpage p {
+        font-size: 16px;
+        line-height: 20px;
+    }
+
+    .Firstpage img {
+        width: 40dvw;
+        height: 30dvh;
+        border-radius: 15px;
+    }
+
+}
 
 
+@media (max-width:750px) {
+
+    .Firstpage {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 10dvh;
+        padding: 0 10dvw;
+    }
+
+    .Firstpage img {
+        width: 60dvw;
+        height: 35dvh;
+        border-radius: 15px;
+    }
+}
+
+@media (max-width:550px) {
+
+    .Firstpage {
+        width: 100dvw;
+        height: 50dvh;
+    }
+
+    .Firstpage img {
+        width: 70dvw;
+        height: 30dvh;
+        border-radius: 15px;
+    }
+
+    .Firstpage p {
+        font-size: 14px;
+        line-height: 20px;
+    }
+}
 
 
 /* Secondpage */
@@ -48,6 +131,7 @@
     gap: 5vh;
     align-items: center;
     justify-content: center;
+    overflow: hidden;
 }
 
 .Secondpage h1 {
@@ -83,15 +167,16 @@
 }
 
 .animation-container {
-    width: 100vw;
+    width: auto;
     overflow: hidden;
     display: flex;
     justify-content: center;
 }
 
 .animation {
-    width: 100dvw;
+    width: auto;
     height: 40dvh;
+    overflow: hidden;
     display: flex;
     align-items: center;
     gap: 4vw;
@@ -125,10 +210,198 @@
     border-radius: 10px;
 }
 
-.item p{
+.item p {
     font-size: 18px;
     color: #ffffff;
     font-family: 'Courier New', Courier, monospace;
     text-align: center;
     text-shadow: 2px 2px 10px rgb(255, 255, 255);
+}
+
+
+
+@media (max-width:1300px) {
+    .item {
+        width: 18dvw;
+        height: 22dvh;
+    }
+
+    .item img {
+        width: 13dvw;
+        height: 14dvh;
+    }
+
+    .animation {
+        animation: slide 17s linear infinite;
+    }
+
+    .Secondpage h1 {
+        font-size: 26px;
+    }
+}
+
+@media (max-width:950px) {
+    .item {
+        width: 22dvw;
+        height: 23dvh;
+    }
+
+    .item img {
+        width: 15dvw;
+        height: 14dvh;
+    }
+
+    .animation {
+        animation: slide 15s linear infinite;
+    }
+
+    .Secondpage h1 {
+        font-size: 22px;
+    }
+}
+
+@media (max-width:750px) {
+
+    .item {
+        width: 25dvw;
+        height: 24dvh;
+    }
+
+    .item img {
+        width: 17dvw;
+        height: 14dvh;
+    }
+
+    .animation {
+        gap: 7dvw;
+    }
+
+    .animation {
+        animation: slide 13s linear infinite;
+    }
+
+    .Secondpage h1 {
+        font-size: 18px;
+    }
+}
+
+@media (max-width:650px) {
+    .item {
+        width: 29dvw;
+        height: 24dvh;
+    }
+
+    .item img {
+        width: 20dvw;
+        height: 14dvh;
+    }
+
+    .animation {
+        gap: 7dvw;
+    }
+
+    .animation {
+        animation: slide 11s linear infinite;
+    }
+
+    .Secondpage h1 {
+        font-size: 16px;
+    }
+}
+
+@media (max-width:570px) {
+    .item {
+        width: 32dvw;
+        height: 25dvh;
+    }
+
+    .item img {
+        width: 24dvw;
+        height: 14dvh;
+    }
+
+    .animation {
+        gap: 7dvw;
+    }
+
+    .animation {
+        animation: slide 9s linear infinite;
+    }
+
+    .Secondpage h1 {
+        font-size: 14px;
+    }
+}
+
+
+@media (max-width:510px) {
+    .item {
+        width: 37dvw;
+        height: 25dvh;
+    }
+
+    .item img {
+        width: 28dvw;
+        height: 14dvh;
+    }
+
+    .animation {
+        gap: 10dvw;
+    }
+
+    .animation {
+        animation: slide 13s linear infinite;
+    }
+
+    .Secondpage h1 {
+        font-size: 16px;
+    }
+}
+
+@media (max-width:460px) {
+    .item {
+        width: 43dvw;
+        height: 25dvh;
+    }
+
+    .item img {
+        width: 32dvw;
+        height: 17dvh;
+    }
+
+    .animation {
+        gap: 10dvw;
+    }
+
+    .animation {
+        animation: slide 13s linear infinite;
+    }
+
+    .Secondpage h1 {
+        font-size: 16px;
+    }
+}
+
+@media (max-width:400px) {
+    .item {
+        width: 50dvw;
+        height: 25dvh;
+    }
+
+    .item img {
+        width: 37dvw;
+        height: 17dvh;
+    }
+
+    .animation {
+        gap: 10dvw;
+    }
+
+    .animation {
+        animation: slide 17s linear infinite;
+    }
+
+    .Secondpage h1 {
+        font-size: 16px;
+    }
 }
