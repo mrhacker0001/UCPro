@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import './Apps.css';
 import almaz from './assets/almaz.png';
 import axios from 'axios';
@@ -8,6 +8,8 @@ function FreeFire() {
     const [paymentProof, setPaymentProof] = useState(null);
     const [showForm, setShowForm] = useState(false);
     const [id, setId] = useState("");
+    const [isAuthenticated, setIsAuthenticated] = useState(false); // Foydalanuvchi login bo'lganini tekshirish
+    const [showAuthModal, setShowAuthModal] = useState(false);
 
     const data = [
         { img: almaz, name: "almaz", price: 13000, count: 105 },
@@ -21,6 +23,10 @@ function FreeFire() {
     ];
 
     const handleOrderClick = (item) => {
+        if (!isAuthenticated) {
+            setShowAuthModal(true);
+            return;
+        }
         setSelectedItem(item);
         setShowForm(true);
     };
@@ -68,7 +74,20 @@ function FreeFire() {
                         <button onClick={() => handleOrderClick(item)}>buyurtma berish</button>
                     </div>
                 ))}
+
             </div>
+
+            {showAuthModal && (
+                <div className="form-container">
+                    <div className="form">
+                        <h2>Buyurtma berish uchun tizimga kiring</h2>
+                        <p>Iltimos, buyurtma berish uchun avval tizimga kiring yoki ro‘yxatdan o‘ting.</p>
+                        <button onClick={() => window.location.href = '/login'}>Login</button>
+                        <button onClick={() => window.location.href = '/register'}>Ro‘yxatdan o‘tish</button>
+                        <button onClick={() => setShowAuthModal(false)}>Bekor qilish</button>
+                    </div>
+                </div>
+            )}
 
             {showForm && selectedItem && (
                 <div className='form-container'>

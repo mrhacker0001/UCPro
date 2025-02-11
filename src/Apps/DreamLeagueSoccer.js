@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import dls from "./assets/dls.png"
 import axios from 'axios';
 
@@ -8,14 +8,20 @@ function DreamLeagueSoccer() {
   const [paymentProof, setPaymentProof] = useState(null);
   const [showForm, setShowForm] = useState(false);
   const [phoneNumber, setPhoneNumber] = useState("");
+  const [isAuthenticated, setIsAuthenticated] = useState(false); // Foydalanuvchi login bo'lganini tekshirish
+  const [showAuthModal, setShowAuthModal] = useState(false);
 
   const data = [
     { counttanga: 50000, img: dls, price: 115000, countolmos: 1800, collect: "5-6 kun" },
     { counttanga: 80000, img: dls, price: 185000, countolmos: 3000, collect: "9-10 kun" },
     { counttanga: 155000, img: dls, price: 335000, countolmos: 50000, collect: "15-20 kun" },
   ]
-
+  
   const handleOrderClick = (item) => {
+    if (!isAuthenticated) {
+      setShowAuthModal(true);
+      return;
+    }
     setSelectedItem(item);
     setShowForm(true);
   };
@@ -40,7 +46,7 @@ function DreamLeagueSoccer() {
       `📱 Telefon: ${phoneNumber}\n` +
       `💎 Olmos: ${selectedItem.countolmos} ta\n` +
       `🪙 Tanga: ${selectedItem.counttanga} ta\n` +
-      `💰 Narxi: ${selectedItem.price} so'm\n`+
+      `💰 Narxi: ${selectedItem.price} so'm\n` +
       `Dream League Soccer`
     );
     formData.append('photo', paymentProof);
@@ -53,8 +59,8 @@ function DreamLeagueSoccer() {
       );
       alert('Buyurtma yuborildi!');
       setShowForm(false);
-      setPhoneNumber(""); 
-      setPaymentProof(null); 
+      setPhoneNumber("");
+      setPaymentProof(null);
     } catch (error) {
       console.error('Xatolik yuz berdi:', error);
       alert("Ma'lumotlarni yuborishda xatolik yuz berdi");
@@ -78,6 +84,20 @@ function DreamLeagueSoccer() {
           </div>
         ))}
       </div>
+
+
+
+      {showAuthModal && (
+        <div className="form-container">
+          <div className="form">
+            <h2>Buyurtma berish uchun tizimga kiring</h2>
+            <p>Iltimos, buyurtma berish uchun avval tizimga kiring yoki ro‘yxatdan o‘ting.</p>
+            <button onClick={() => window.location.href = '/login'}>Login</button>
+            <button onClick={() => window.location.href = '/register'}>Ro‘yxatdan o‘tish</button>
+            <button onClick={() => setShowAuthModal(false)}>Bekor qilish</button>
+          </div>
+        </div>
+      )}
 
       {
         showForm && selectedItem && (

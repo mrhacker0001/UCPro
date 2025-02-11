@@ -99,3 +99,104 @@
     height: 20px;
     cursor: pointer;
 }
+
+@media (max-width:1220px) {
+    .register-card {
+        width: 45dvw;
+    }
+}
+
+@media (max-width:1000px) {
+    .register-card {
+        width: 50dvw;
+    }
+
+    .register-card h1 {
+        font-size: 30px;
+    }
+
+    .register-card h1 span {
+        font-size: 18px;
+    }
+}
+
+@media (max-width:850px) {
+    .register-card {
+        width: 65dvw;
+    }
+
+    .register-card h1 {
+        font-size: 30px;
+    }
+
+    .register-card h1 span {
+        font-size: 18px;
+    }
+
+    .Register {
+        height: 120dvh;
+    }
+}
+
+@media (max-width:650px) {
+    .register-card {
+        width: 75dvw;
+        height: 70dvh;
+    }
+
+    .register-card h1 {
+        font-size: 30px;
+    }
+
+    .register-card h1 span {
+        font-size: 18px;
+    }
+}
+
+@media (max-width:480px) {
+    .register-card {
+        width: 75dvw;
+        height: 60dvh;
+    }
+
+    .register-card h1 {
+        font-size: 32px;
+    }
+
+    .register-card h1 span {
+        font-size: 16px;
+    }
+
+    .inputs input {
+        font-size: 16px;
+        height: 3dvh;
+    }
+
+    .Register {
+        height: 100dvh;
+    }
+}
+
+@media (max-width:400px) {
+    .register-card {
+        width: 95dvw;
+        height: 60dvh;
+    }
+
+    .register-card h1 {
+        font-size: 32px;
+    }
+
+    .register-card h1 span {
+        font-size: 16px;
+    }
+
+    .inputs input {
+        font-size: 16px;
+        height: 3dvh;
+    }
+
+    .Register {
+        height: 100dvh;
+    }
+}

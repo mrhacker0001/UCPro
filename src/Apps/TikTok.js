@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import team from "./assets/team.png"
 import eye from "./assets/eye.png"
 import like from "./assets/love.png"
@@ -11,6 +11,8 @@ function TikTok() {
   const [showForm, setShowForm] = useState(false);
   const [accountLink, setAccountLink] = useState("");
   const [count, setCount] = useState(1000);
+  const [isAuthenticated, setIsAuthenticated] = useState(false); // Foydalanuvchi login bo'lganini tekshirish
+  const [showAuthModal, setShowAuthModal] = useState(false);
 
   const data = [
     { name: "Chiqmaydigan obunachi (kafolat 360 kun)", img: team, price: 35000, count: 1000 },
@@ -29,8 +31,11 @@ function TikTok() {
 
 
 
-
   const handleOrderClick = (item) => {
+    if (!isAuthenticated) {
+      setShowAuthModal(true);
+      return;
+    }
     setSelectedItem(item);
     setShowForm(true);
   };
@@ -51,12 +56,12 @@ function TikTok() {
     formData.append('chat_id', '@ucpro_books');
     formData.append(
       'caption',
-        `📌 Buyurtma ma’lumotlari:\n\n` +
+      `📌 Buyurtma ma’lumotlari:\n\n` +
       `🔗 Akkaunt/Post: ${accountLink}\n` +
       `📢 Xizmat turi: ${selectedItem.name}\n` +
       `📊 Soni: ${count} ta\n` +
       `💰 Narxi: ${selectedItem.price} so'm\n` +
-        `Tik Tok`
+      `Tik Tok`
 
     );
     formData.append('photo', paymentProof);
@@ -124,6 +129,18 @@ function TikTok() {
           </div>
         ))}
       </div>
+
+      {showAuthModal && (
+        <div className="form-container">
+          <div className="form">
+            <h2>Buyurtma berish uchun tizimga kiring</h2>
+            <p>Iltimos, buyurtma berish uchun avval tizimga kiring yoki ro‘yxatdan o‘ting.</p>
+            <button onClick={() => window.location.href = '/login'}>Login</button>
+            <button onClick={() => window.location.href = '/register'}>Ro‘yxatdan o‘tish</button>
+            <button onClick={() => setShowAuthModal(false)}>Bekor qilish</button>
+          </div>
+        </div>
+      )}
 
       {showForm && selectedItem && (
         <div className="form-container">

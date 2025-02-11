@@ -175,6 +175,7 @@
         display: none;
     }
 
+
     .navbar-media {
         width: 100dvw;
         height: 12dvh;
@@ -255,6 +256,12 @@
     .nav-btns-media img {
         width: 6dvw;
         height: 5dvh;
+    }
+
+    .nav-btns-media button {
+        color: #ffffff;
+        background: none;
+        border: none;
     }
 }
 

@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import eye from "./assets/eye.png"
 import team from "./assets/team.png"
 import emoji from "./assets/emoji.png"
@@ -12,6 +12,8 @@ function Telegram() {
   const [showForm, setShowForm] = useState(false);
   const [accountLink, setAccountLink] = useState("");
   const [count, setCount] = useState(1000);
+  const [isAuthenticated, setIsAuthenticated] = useState(false); // Foydalanuvchi login bo'lganini tekshirish
+  const [showAuthModal, setShowAuthModal] = useState(false);
 
   const data = [
     { name: "Arzon ko'rish", img: eye, price: 100, count: 1000 },
@@ -57,9 +59,14 @@ function Telegram() {
   ]
 
   const handleOrderClick = (item) => {
+    if (!isAuthenticated) {
+      setShowAuthModal(true);
+      return;
+    }
     setSelectedItem(item);
     setShowForm(true);
   };
+
 
   const handleCopy = (text) => {
     navigator.clipboard.writeText(text);
@@ -77,11 +84,11 @@ function Telegram() {
     formData.append('chat_id', '@ucpro_books');
     formData.append(
       'caption',
-        `📌 Buyurtma ma’lumotlari:\n\n` +
+      `📌 Buyurtma ma’lumotlari:\n\n` +
       `🔗 Akkaunt/Post: ${accountLink}\n` +
       `📢 Xizmat turi: ${selectedItem.name}\n` +
       `📊 Soni: ${count} ta\n` +
-      `💰 Narxi: ${selectedItem.price} so'm\n`+
+      `💰 Narxi: ${selectedItem.price} so'm\n` +
       `Telegram`
 
 
@@ -168,6 +175,20 @@ function Telegram() {
         ))}
       </div>
 
+
+      {showAuthModal && (
+        <div className="form-container">
+          <div className="form">
+            <h2>Buyurtma berish uchun tizimga kiring</h2>
+            <p>Iltimos, buyurtma berish uchun avval tizimga kiring yoki ro‘yxatdan o‘ting.</p>
+            <button onClick={() => window.location.href = '/login'}>Login</button>
+            <button onClick={() => window.location.href = '/register'}>Ro‘yxatdan o‘tish</button>
+            <button onClick={() => setShowAuthModal(false)}>Bekor qilish</button>
+          </div>
+        </div>
+      )}
+
+
       {showForm && selectedItem && (
         <div className="form-container">
           <form className="form" onSubmit={handleSubmit}>
@@ -195,7 +216,7 @@ function Telegram() {
             <p onClick={() => handleCopy("9860080186485357")} className="copy-text">
               To'lov uchun karta (Uzcard(F/T)): 9860 0801 8648 5357
             </p>
-            
+
 
             <span>
               To'lov chekini yuklang !!!
