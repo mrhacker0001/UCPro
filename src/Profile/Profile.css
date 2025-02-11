@@ -87,3 +87,234 @@
     color: #ffffff;
     cursor: pointer;
 }
+
+@media (max-width:1400px) {
+
+    .profile-card img {
+        width: 14dvw;
+    }
+
+    .profile-card button {
+        width: 20dvw;
+        height: 5dvh;
+    }
+
+    .informs {
+        width: 100%;
+        gap: 5dvh;
+    }
+
+    .informs b {
+        width: 80%;
+    }
+
+    .Profile h1::after,
+    .Profile h1::before {
+        content: "";
+        width: 35vw;
+        height: 1px;
+        background: #ffffff;
+        display: block;
+    }
+}
+
+@media (max-width:1200px) {
+
+    .profile-card img {
+        width: 15dvw;
+        height: 18dvh;
+    }
+
+    .profile-card button {
+        width: 20dvw;
+        height: 5dvh;
+    }
+
+    .informs {
+        width: 100%;
+        gap: 5dvh;
+    }
+
+    .informs b {
+        width: 70%;
+        font-size: 20px;
+    }
+}
+
+@media (max-width:1050px) {
+
+    .profile-card img {
+        width: 17dvw;
+        height: 18dvh;
+    }
+
+    .profile-card button {
+        width: 20dvw;
+        height: 5dvh;
+    }
+
+    .informs {
+        width: 100%;
+        gap: 3dvh;
+    }
+
+    .informs b {
+        width: 70%;
+        font-size: 18px;
+    }
+}
+
+@media (max-width:1050px) {
+
+    .profile-card img {
+        width: 20dvw;
+        height: 18dvh;
+    }
+
+    .profile-card button {
+        width: 25dvw;
+        height: 5dvh;
+    }
+
+    .informs {
+        width: 100%;
+        gap: 3dvh;
+    }
+
+    .informs b {
+        width: 80%;
+        font-size: 18px;
+    }
+}
+
+@media (max-width:790px) {
+
+    .profile-card img {
+        width: 20dvw;
+        height: 16dvh;
+    }
+
+    .profile-card button {
+        width: 30dvw;
+        height: 6dvh;
+    }
+
+    .informs {
+        width: 100%;
+        gap: 3dvh;
+    }
+
+    .informs b {
+        width: 80%;
+        font-size: 18px;
+    }
+}
+
+@media (max-width:700px) {
+
+    .profile-card img {
+        width: 20dvw;
+        height: 15dvh;
+    }
+
+    .profile-card button {
+        width: 30dvw;
+        height: 6dvh;
+    }
+
+    .informs {
+        width: 100%;
+        gap: 3dvh;
+    }
+
+    .informs b {
+        width: 80%;
+        font-size: 16px;
+    }
+}
+
+@media (max-width:700px) {
+
+    .profile-card img {
+        width: 25dvw;
+        height: 15dvh;
+    }
+}
+
+@media (max-width:500px) {
+
+    .profile-card {
+        width: 90dvw;
+        height: 60dvh;
+    }
+
+    .profile-card img {
+        width: 25dvw;
+        height: 13dvh;
+    }
+
+    .informs b {
+        width: 95%;
+        font-size: 14px;
+    }
+
+    .profile-card button {
+        width: 40dvw;
+        height: 6dvh;
+    }
+
+    .Profile h1::after,
+    .Profile h1::before {
+        content: "";
+        width: 30vw;
+        height: 1px;
+        background: #ffffff;
+        display: block;
+    }
+}
+
+@media (max-width:450px) {
+
+    .profile-card {
+        width: 90dvw;
+        height: 60dvh;
+    }
+
+    .profile-card img {
+        width: 30dvw;
+        height: 13dvh;
+    }
+
+    .informs b {
+        width: 95%;
+        font-size: 14px;
+    }
+
+    .profile-card button {
+        width: 40dvw;
+        height: 6dvh;
+    }
+}
+
+@media (max-width:400px) {
+
+    .profile-card {
+        width: 90dvw;
+        height: 60dvh;
+    }
+
+    .profile-card img {
+        width: 34dvw;
+        height: 14dvh;
+    }
+
+    .informs b {
+        width: 95%;
+        font-size: 14px;
+    }
+
+    .profile-card button {
+        width: 40dvw;
+        height: 6dvh;
+    }
+}
