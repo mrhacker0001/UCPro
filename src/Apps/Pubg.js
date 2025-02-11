@@ -84,10 +84,7 @@ function Pubg() {
               <p>Narxi: {selectedItem.price} so'm</p>
               <p>UC soni: {selectedItem.count} ta</p>
               <p onClick={() => handleCopy('9860080186485357')} className="copy-text">
-                To'lov uchun karta (Uzcard): 9860 0801 8648 5357
-              </p>
-              <p onClick={() => handleCopy('5189690066340779')} className="copy-text">
-                To'lov uchun karta (Mastercard): 5189 6900 6634 0779
+                To'lov uchun karta (Uzcard(F/T)): 9860 0801 8648 5357
               </p>
               <input
                 type="number"

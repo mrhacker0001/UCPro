@@ -26,7 +26,6 @@ function Footer() {
                 <b onClick={() => navigate("/Apps/Instagram")}>Instagram</b>
                 <b onClick={() => navigate("/Apps/Telegram")}>Telegram</b>
                 <b onClick={() => navigate("/Apps/TikTok")}>Tik Tok</b>
-                <b onClick={() => navigate("/Apps/YouTube")}>You Tube</b>
             </div>
 
             <div className="contact-apps">
