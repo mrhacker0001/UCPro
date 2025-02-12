@@ -12,15 +12,22 @@ function FreeFire() {
     const [showAuthModal, setShowAuthModal] = useState(false);
 
     const data = [
-        { img: almaz, name: "almaz", price: 13000, count: 105 },
-        { img: almaz, name: "almaz", price: 24000, count: 210 },
-        { img: almaz, name: "almaz", price: 36000, count: 326 },
-        { img: almaz, name: "almaz", price: 34000, count: 431 },
-        { img: almaz, name: "almaz", price: 60000, count: 546 },
-        { img: almaz, name: "almaz", price: 66000, count: 651 },
-        { img: almaz, name: "almaz", price: 92000, count: 872 },
-        { img: almaz, name: "almaz", price: 116000, count: 1113 },
+        { img: almaz, name: "almaz", price: 13000, discount: 11999, count: " 105(180)" },
+        { img: almaz, name: "almaz", price: 24000, discount: 22999, count: " 210(285)" },
+        { img: almaz, name: "almaz", price: 36000, discount: 34999, count: " 326(559)" },
+        { img: almaz, name: "almaz", price: 46000, discount: 44999, count: " 431(664)" },
+        { img: almaz, name: "almaz", price: 56000, discount: 54999, count: " 546(936)" },
+        { img: almaz, name: "almaz", price: 66000, discount: 64999, count: " 651(1086)" },
+        { img: almaz, name: "almaz", price: 92000, discount: 89999, count: " 872(1264)" },
+        { img: almaz, name: "almaz", price: 116000, discount: 109999, count: "1113(1908)" },
+        { img: almaz, name: "almaz", price: 166000, discount: 164999, count: "1659(2454)" },
+        { img: almaz, name: "almaz", price: 222000, discount: 219999, count: "2180(2854)" },
+        { img: almaz, name: "almaz", price: 352000, discount: 349999, count: "3293(3967)" },
+        { img: almaz, name: "almaz", price: 452000, discount: 449999, count: "4360(5034)" },
+        { img: almaz, name: "almaz", price: 552000, discount: 549999, count: "6160(10360)" },
+        { img: almaz, name: "almaz", price: 892000, discount: 889999, count: "8350(12540)" },
     ];
+
 
     const handleOrderClick = (item) => {
         if (!isAuthenticated) {
@@ -71,12 +78,15 @@ function FreeFire() {
     return (
         <div className='FreeFire'>
             <h1>Free Fire</h1>
+            <br />
+            <p className='bonus'>bonuslar faqat birinchi marta beriladi</p>
             <div className="games-carts">
                 {data.map((item, index) => (
                     <div className="game-cart" key={index}>
                         <img src={item.img} alt={item.name} />
                         <p>{item.name}</p>
-                        <span>narxi: {item.price} so'm</span>
+                        <span>narxi: <s>{item.price} </s> so'm</span>
+                        <span>chegirmada: {item.discount} so'm</span>
                         <span>soni: {item.count} ta</span>
                         <button onClick={() => handleOrderClick(item)}>buyurtma berish</button>
                     </div>

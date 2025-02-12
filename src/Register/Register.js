@@ -99,8 +99,28 @@ function Register() {
                         name="phone"
                         placeholder="Telefon raqam"
                         value={formdata.phone}
-                        onChange={handleChange}
+                        onChange={(e) => {
+                            let value = e.target.value;
+
+                            if (!value.startsWith("+998")) {
+                                value = "+998";
+                            }
+
+                            const numericPart = value.slice(4).replace(/\D/g, "");
+                            value = "+998" + numericPart.slice(0, 9);
+
+                            setFormdata({
+                                ...formdata,
+                                phone: value,
+                            });
+                        }}
+                        onKeyDown={(e) => {
+                            if (formdata.phone.length <= 4 && e.key === "Backspace") {
+                                e.preventDefault();
+                            }
+                        }}
                     />
+
                     <input
                         type="password"
                         name="password"

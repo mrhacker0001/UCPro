@@ -14,17 +14,18 @@ function Pubg() {
 
 
   const data = [
-    { name: "UC", img: uc, price: 14000, count: 60 },
-    { name: "UC", img: uc, price: 27000, count: 120 },
-    { name: "UC", img: uc, price: 40000, count: 180 },
-    { name: "UC", img: uc, price: 63000, count: 325 },
-    { name: "UC", img: uc, price: 120000, count: 660 },
-    { name: "UC", img: uc, price: 132000, count: 720 },
-    { name: "UC", img: uc, price: 182000, count: 985 },
-    { name: "UC", img: uc, price: 240000, count: 1320 },
-    { name: "UC", img: uc, price: 302000, count: 1800 },
-    { name: "UC", img: uc, price: 602000, count: 3850 },
-    { name: "UC", img: uc, price: 1162000, count: 8100 },
+    { name: "UC", img: uc, price: 14000, discount: 12999, count: 60 },
+    { name: "UC", img: uc, price: 27000, discount: 25999, count: 120 },
+    { name: "UC", img: uc, price: 40000, discount: 38999, count: 180 },
+    { name: "UC", img: uc, price: 63000, discount: 61999, count: 325 },
+    { name: "UC", img: uc, price: 74000, discount: 73999, count: 385 },
+    { name: "UC", img: uc, price: 120000, discount: 117999, count: 660 },
+    { name: "UC", img: uc, price: 132000, discount: 129999, count: 720 },
+    { name: "UC", img: uc, price: 182000, discount: 179999, count: 985 },
+    { name: "UC", img: uc, price: 240000, discount: 237999, count: 1320 },
+    { name: "UC", img: uc, price: 302000, discount: 299999, count: 1800 },
+    { name: "UC", img: uc, price: 602000, discount: 599999, count: 3850 },
+    { name: "UC", img: uc, price: 1162000, discount: 1159999, count: 8100 },
   ]
 
   const handleOrderClick = (item) => {
@@ -84,7 +85,8 @@ function Pubg() {
           <div className="game-cart" key={index}>
             <img src={item.img} alt={item.name} />
             <p>{item.name}</p>
-            <span>narxi: {item.price} so'm</span>
+            <span>narxi: <s>{item.price} </s>so'm</span>
+            <span>chegirmada: {item.discount}so'm</span>
             <span>soni: {item.count} ta</span>
             <button onClick={() => handleOrderClick(item)}>buyurtma berish</button>
           </div>
