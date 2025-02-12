@@ -1,8 +1,10 @@
 .News {
     width: 100dvw;
-    height: 50dvh;
+    height: 100dvh;
     display: flex;
-    flex-wrap: wrap;
+    flex-direction: column;
+    gap: 4dvh;
+    padding: 10dvh 5dvw;
     align-items: center;
     justify-content: center;
 }
@@ -12,6 +14,21 @@
     color: #ffffff;
     font-family: 'Courier New', Courier, monospace;
 }
+
+.News b {
+    font-size: 32px;
+    color: #ffffff;
+    font-family: 'Times New Roman', Times, serif;
+}
+
+
+.News p {
+    color: #ffffff;
+    line-height: 30px;
+}
+
+
+
 
 @media (max-width:850px) {
     .News h1 {

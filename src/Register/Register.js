@@ -37,6 +37,10 @@ function Register() {
         });
     };
 
+    const saveUserToLocalStorage = (user) => {
+        localStorage.setItem('user', JSON.stringify(user));
+    };
+
     const handleRegister = async (e) => {
         e.preventDefault();
 
@@ -46,15 +50,9 @@ function Register() {
         }
 
         if (rememberMe) {
-            localStorage.setItem('name', formdata.name);
-            localStorage.setItem('email', formdata.email);
-            localStorage.setItem('phone', formdata.phone);
-            localStorage.setItem('password', formdata.password);
+            saveUserToLocalStorage(formdata);
         } else {
-            localStorage.removeItem('name');
-            localStorage.removeItem('email');
-            localStorage.removeItem('phone');
-            localStorage.removeItem('password');
+            localStorage.removeItem('user');
         }
 
         try {
@@ -74,6 +72,7 @@ function Register() {
             alert("Ma'lumotlarni yuborishda xatolik yuz berdi");
         }
     };
+
 
     return (
         <div className='Register'>
