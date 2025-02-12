@@ -16,7 +16,7 @@ function DreamLeagueSoccer() {
     { counttanga: 80000, img: dls, price: 185000, countolmos: 3000, collect: "9-10 kun" },
     { counttanga: 155000, img: dls, price: 335000, countolmos: 50000, collect: "15-20 kun" },
   ]
-  
+
   const handleOrderClick = (item) => {
     if (!isAuthenticated) {
       setShowAuthModal(true);
@@ -66,6 +66,13 @@ function DreamLeagueSoccer() {
       alert("Ma'lumotlarni yuborishda xatolik yuz berdi");
     }
   };
+
+  useEffect(() => {
+    const user = localStorage.getItem("user"); // LocalStorage'dan user ma'lumotini olish
+    if (user) {
+      setIsAuthenticated(true);
+    }
+  }, []);
 
   return (
     <div className='DreamLeagueSoccer'>

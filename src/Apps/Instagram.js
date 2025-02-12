@@ -87,6 +87,13 @@ function Instagram() {
     }
   };
 
+  useEffect(() => {
+    const user = localStorage.getItem("user"); // LocalStorage'dan user ma'lumotini olish
+    if (user) {
+      setIsAuthenticated(true);
+    }
+  }, []);
+
   return (
     <div className="Instagram">
       <h1>Instagram obunachi</h1>

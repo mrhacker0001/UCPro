@@ -1,13 +1,13 @@
 import React, { useState, useEffect } from 'react';
 import './Navbar.css';
 import logo from './assets/UCPro.png';
-import profileIcon from './assets/profile-user (1).png'; // Profil ikonkasi uchun rasm
+import profileIcon from './assets/profile-user (1).png';
 import { NavLink, useNavigate } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faBars, faTimes } from '@fortawesome/free-solid-svg-icons';
-import telegram from "../Footer/assets/telegram (3).png"
-import instagram from "../Footer/assets/instagram (3).png"
-import contact from "../Footer/assets/contact-mail (1).png"
+import telegram from "../Footer/assets/telegram (3).png";
+import instagram from "../Footer/assets/instagram (3).png";
+import contact from "../Footer/assets/contact-mail (1).png";
 
 function Navbar() {
   const [showMenu, setShowMenu] = useState(false);
@@ -15,15 +15,19 @@ function Navbar() {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
 
   useEffect(() => {
-    const savedEmail = localStorage.getItem('email');
-    const savedPhone = localStorage.getItem('phone');
-    if (savedEmail && savedPhone) {
+    const user = localStorage.getItem('user');
+    if (user) {
       setIsLoggedIn(true);
     }
   }, []);
 
-  return (
+  const handleLogout = () => {
+    localStorage.removeItem('user');
+    setIsLoggedIn(false);
+    navigate('/');
+  };
 
+  return (
     <>
       <div className='Navbar'>
         <img src={logo} alt="Logo" onClick={() => navigate('/')} />
@@ -37,12 +41,15 @@ function Navbar() {
 
         <div className="nav-btns">
           {isLoggedIn ? (
-            <img
-              src={profileIcon}
-              alt="Profil"
-              className="profile-icon"
-              onClick={() => navigate('/Profile')}
-            />
+            <>
+              <img
+                src={profileIcon}
+                alt="Profil"
+                className="profile-icon"
+                onClick={() => navigate('/Profile')}
+              />
+              <button onClick={handleLogout}>Chiqish</button>
+            </>
           ) : (
             <>
               <button onClick={() => navigate('/Register')}>Ro'yxatdan o'tish</button>
@@ -52,17 +59,19 @@ function Navbar() {
         </div>
       </div>
 
-
       <div className="navbar-media">
         <img src={logo} alt="" onClick={() => navigate('/')} />
 
         <div className="nav-btns-media">
           {isLoggedIn ? (
-            <img
-              src={profileIcon}
-              alt="Profil"
-              onClick={() => navigate('/Profile')}
-            />
+            <>
+              <img
+                src={profileIcon}
+                alt="Profil"
+                onClick={() => navigate('/Profile')}
+              />
+              <button onClick={handleLogout}>Chiqish</button>
+            </>
           ) : (
             <>
               <button onClick={() => navigate('/Register')}>Ro'yxatdan o'tish</button>
@@ -86,9 +95,7 @@ function Navbar() {
             <button> <a href="https://t.me/UCPro_official"> <img src={telegram} alt="" /></a></button>
             <button> <a href="https://www.instagram.com/ucpro_official/"> <img src={instagram} alt="" /></a></button>
           </div>
-
         </div>
-
       </div>
     </>
   );

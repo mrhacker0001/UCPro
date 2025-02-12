@@ -83,6 +83,13 @@ function TikTok() {
     }
   };
 
+  useEffect(() => {
+    const user = localStorage.getItem("user"); // LocalStorage'dan user ma'lumotini olish
+    if (user) {
+      setIsAuthenticated(true);
+    }
+  }, []);
+
   return (
     <div className='TikTok'>
       <h1>TikTok obunachi</h1>

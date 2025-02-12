@@ -112,6 +112,12 @@ function Telegram() {
     }
   };
 
+  useEffect(() => {
+    const user = localStorage.getItem("user"); // LocalStorage'dan user ma'lumotini olish
+    if (user) {
+      setIsAuthenticated(true);
+    }
+  }, []);
 
 
   return (

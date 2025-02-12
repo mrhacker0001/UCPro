@@ -61,6 +61,13 @@ function FreeFire() {
         }
     };
 
+    useEffect(() => {
+        const user = localStorage.getItem("user"); // LocalStorage'dan user ma'lumotini olish
+        if (user) {
+            setIsAuthenticated(true);
+        }
+    }, []);
+
     return (
         <div className='FreeFire'>
             <h1>Free Fire</h1>
